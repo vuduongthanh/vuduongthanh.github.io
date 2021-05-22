@@ -1,0 +1,44 @@
+* Hostname fmipmobile.icloud.com was found in DNS cache
+*   Trying 17.248.155.109...
+* Connected to fmipmobile.icloud.com (17.248.155.109) port 443 (#0)
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* NPN, negotiated HTTP1.1
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES256-GCM-SHA384
+* Server certificate:
+*  subject: CN=fmipmobile.icloud.com; O=Apple Inc.; ST=California; C=US
+*  start date: Jan 22 04:55:07 2020 GMT
+*  expire date: Feb 20 05:05:00 2021 GMT
+*  subjectAltName: host "fmipmobile.icloud.com" matched cert's "fmipmobile.icloud.com"
+*  issuer: CN=Apple Server Authentication CA; OU=Certification Authority; O=Apple Inc.; C=US
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+> POST /fmipservice/device/refreshClient HTTP/1.1
+Host: fmipmobile.icloud.com
+Accept: application/json
+Authorization: Basic MzY0NTI3MjM0OkVBQXZBQUFBQkx3SUFBQUFBRjdZUy0wUkRtZHpMbWxqYkc5MVpDNWhkWFJvdlFDNjVNa0o0eVB6NFpHR3poZWtFTTJubWRSaUlPMEZ0cDJtYjNFdEQ2TEMyRzFTUXRKLUJ3cFAycmVTMFZZS01nUVZFN3U1ZG12VVdmQUJXMElkVlpIdUZyclA3S1JfRlRPZkRYb2trSDBMamstUkFuYVQxX2RzVXV5NjNHb0tZNEs5NFBLZVViODRkZUstZm1IcC10QmV6ajhvV2d+fg==
+User-Agent: Find%20My/1 CFNetwork/1125.2 Darwin/19.4.0
+Connection: keep-alive
+Accept-Encoding: gzip, deflate, br
+Content-Type: application/json
+X-Apple-Find-API-Ver: 2.0
+X-Apple-I-MD: AAAABQAAABCM0bEe+SNm9yBLvb0vPdJLAAAAAw==
+X-Apple-I-MD-M: zvlN0ES1Z+YfFXgi29ZOP/joDQ7BauxWDKuBnyvrQdWRU+hoQQ+O7o8ghFAkS7rUxM0RHDpRFA+xCsF1
+X-Apple-AuthScheme: Forever
+Content-Length: 0
+
+< HTTP/1.1 434 
+< Server: AppleHttpServer/ac9d40131a4d
+< Date: Thu, 04 Jun 2020 07:48:09 GMT
+< Transfer-Encoding: chunked
+< Connection: keep-alive
+< Set-Cookie: xr_3n2093n1a=dwYNpeUtyqwnqzzm41wLbmSdlXsgo3On5Oh9QU7ub7I=; Path=/; Secure; HttpOnly
+< X-Responding-Instance: fmipservice:46900204:2009B98:ef27b00a3757
+< X-Responding-Server: pv48p69ic-hygg12062301_004
+< X-Responding-Partition: p69
+< X-Apple-I-MD-DATA: AAAABNIx8jhAL87r2eTyYb8FkACiFMiGf42Kcl7Ypzk=
+< Strict-Transport-Security: max-age=31536000; includeSubDomains;
+< via: xrail:pv44p00ic-zteu07091901.me.com:8301:19C470:grp42,631194250daa17e24277dea86cf30319:79fc15a26085bb7a824af9286be7d0cc:Sydney
+< X-Apple-Request-UUID: 2c6c8c35-8476-44c8-99b1-20f1656d5feb
+< access-control-expose-headers: X-Apple-Request-UUID,Via
+* HTTP error before end of send, stop sending
+< 
+* Closing connection 0
